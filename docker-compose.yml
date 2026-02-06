@@ -1,0 +1,28 @@
+services:
+  caddy:
+    image: lucaslorentz/caddy-docker-proxy:2.8-alpine
+    restart: unless-stopped
+    environment:
+      CADDY_DOCKER_ACME_EMAIL: delgadito@hotmail.com
+      CADDY_DOCKER_CADDYFILE_PATH: /etc/caddy/Caddyfile
+      volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config 
+      ports:
+      - "3080:80"
+      - "3443:443"
+      networks:
+      - proxy
+    logging:
+      driver: local
+  
+  volumes:
+  caddy_config:
+  caddy_data:
+    
+networks:
+  proxy:
+    driver: bridge
+    external: true
