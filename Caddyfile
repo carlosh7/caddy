@@ -1,0 +1,11 @@
+{   
+    acme_ca https://acme-v02.api.letsencrypt.org/directory
+    email   nombre@gmail.com   # Poner email válido
+}
+ 
+sub.dominio.com {              # Poner subdominio ó dominio válido con DNS redirigido 
+    reverse_proxy  IP:puerto   # Poner IP:puerto
+}
+
+
+
