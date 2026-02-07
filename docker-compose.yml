@@ -22,6 +22,6 @@ services:
     caddy_config:
     caddy_data:
     
-  networks:
+networks:
     caddy:
       external: true  
