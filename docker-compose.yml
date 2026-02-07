@@ -19,7 +19,7 @@ services:
         - caddy 
 
   volumes:
-    caddy_data:
+    caddy_config:
     caddy_data:
     
   networks:
