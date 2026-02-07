@@ -23,5 +23,5 @@ services:
     caddy_data:
     
   networks:
-  caddy:
-    external: true  
+    caddy:
+      external: true  
