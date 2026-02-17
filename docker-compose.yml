@@ -10,17 +10,18 @@ services:
       ports:
         - 82:80
         - 446:443
+         - 443:443/udp
       volumes:
         - ./Caddyfile:/etc/caddy/Caddyfile
         - ./site:/srv
         - caddy_data:/data
         - caddy_config:/config
       networks:
-        - caddy 
+        - reverse_proxy
 volumes:
   caddy_config:
   caddy_data:
     
 networks:
-  caddy:
-    external: true  
+  reverse_proxy:
+     external: true
