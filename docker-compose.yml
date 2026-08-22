@@ -1,12 +1,10 @@
 services:
   caddy:
-      image: caddy:latest
+      image: caddy:2.11.4
       restart: unless-stopped
       container_name: caddy
       environment:
         - TZ=America/Bogota
-      cap_add:
-      - NET_ADMIN  
       ports:
         - 80:80
         - 443:443
